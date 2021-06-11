@@ -10,5 +10,5 @@ npm install
 ### Build a .osu file to .json
 
 ```
-npm run compile
+npm run compile [name of file to convert w/o extention]
 ```
