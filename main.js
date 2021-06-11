@@ -1,5 +1,5 @@
+let name = process.argv[2] ||  'FREEDOM_DiVE';
 
-let name = 'FREEDOM_DiVE';
 let path = './songs/'+name+'.osu'
 const osujson = require('osu-json');
 
