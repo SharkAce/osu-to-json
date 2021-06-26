@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "compile": "node SongCompiler.js"
+    "compile": "node src/SongCompiler.js",
+    "web": "start webapp/index.html"
   },
   "keywords": [],
   "author": "",
