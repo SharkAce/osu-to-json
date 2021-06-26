@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Libraries -->
+    <script  src="https://cdn.jsdelivr.net/npm/p5@1.3.1/lib/p5.min.js"></script>
+
+    <!-- Source files -->
+    <script src="request.js"></script>
+    <script src="sketch.js"></script>
+
+    <!-- Save osu map script -->
+    <script>
+      let osu;
+      // HitObjects osu map from repo
+      let osu_URL = "https://raw.githack.com/sharkAce/osu-to-json/main/compiled/FREEDOM_DiVE.json";
+      // Should be changed to a string allowing for user input.
+
+      // Make http request to raw json file
+      request(osu_URL, (data) => {
+        // Save the response in `osu` value.
+        osu = data;
+      })
+    </script>
+
+    
+
+  <title>osu to json beta</title>
+</head>
+<body style="background-color:black">
+<h1 style="text-align:center;color:white">osu to json</h1>
+  <div id="canvas" style="text-align:center"></div>
+</body>
+</html>
