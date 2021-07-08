@@ -20,7 +20,7 @@ function preload() {
 }
 
 function setup() {
-  let canvas = createCanvas(511, 383);
+  let canvas = createCanvas(511*2, 383*2);
   canvas.parent('canvas');
   frameRate(60); 
 }
@@ -34,6 +34,7 @@ let speed = 5;
 // Time value
 let time = 1000;
 function draw() {
+  scale(2)
   background(51);    
   if (time >= osu[osu.length-1].time - speed - 1) {
     // If max time exceeded, restart at 0.
