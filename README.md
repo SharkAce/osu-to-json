@@ -14,5 +14,5 @@ npm run compile [file]
 ```
 example:
 ```
-npm run compile "FREEDOM DiVE [FOUR DIMENSIONS]"
+npm run compile "FREEDOM_DiVE_[FOUR_DIMENSIONS]"
 ```
