@@ -15,7 +15,6 @@ function preload() {
   .catch(function (error) {
     console.log("Error: " + error);
   });
-    // /!\ Will remove http request once moved to local server /!\
 }
 let wnx = 511*2;
 let wny = 383*2;
