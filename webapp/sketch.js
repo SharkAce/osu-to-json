@@ -16,8 +16,11 @@ function preload() {
     console.log("Error: " + error);
   });
 }
-let wnx = 511*2;
-let wny = 383*2;
+let margin = 30;
+let playArea_X = 512;
+let playArea_Y = 384;
+let wnx = (playArea_X*2) + margin*2;
+let wny = (playArea_Y*2) + margin*2;
 function setup() {
   let canvas = createCanvas(wnx, wny);
   canvas.parent('canvas');
@@ -46,8 +49,19 @@ function draw() {
     text('npm run server-up',wnx/2 + 20, wny/2 + 50);
     pop();
   } else {
-    scale(2)
-    background(51);    
+    
+    
+
+    background(51); 
+    scale(2);
+    translate(margin/2, margin/2);
+    stroke(0);
+    noFill();
+    rect(0, 0, playArea_X, playArea_Y);
+
+
+
+
     if (time >= osu[osu.length-1].time - speed - 1) {
       // If max time exceeded, restart at 0.
       time = 0;
@@ -64,7 +78,8 @@ function draw() {
         } else if (type === 'slider') {
           hitObject = new Slider(osu[i].x, osu[i].y, osu[i].path, osu[i].time);
         } else {
-          console.log('Unhandled type: ' + type);
+          console.log('Unhandled type: ' + type + ' found at index: ' + i);
+          console.log('Here is the hitObject: ', osu[i]);
         }
         hitObject.render();
       }
