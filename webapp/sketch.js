@@ -30,7 +30,7 @@ function draw() {
       } else if (type === 'slider') {
         hitObject = new Slider(osu[i].x, osu[i].y, osu[i].path, osu[i].time);
       } else {
-        console.log('Unhandled type');
+        console.log('Unhandled type: ' + type);
       }
       hitObject.render();
     }
