@@ -3,8 +3,7 @@
 let osu;
 
 function preload() {
-  let osu_URL = "https://raw.githack.com/sharkAce/osu-to-json/main/compiled/FREEDOM DiVE [FOUR DIMENSIONS].json";
-
+  let osu_URL = "http://127.0.0.1:8080/compiled_songs/FREEDOM_DiVE_[FOUR DIMENSIONS].json";
   // http request osu map from gh repo
   fetch(osu_URL)
   .then(function (response) {
