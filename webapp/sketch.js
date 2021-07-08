@@ -5,7 +5,7 @@ function setup() {
 }
 
 // Time before object dissapears
-let delay = 1000;
+let delay = 500;
 // Speed at which hitobjects appear
 let speed = 5;
 
@@ -13,7 +13,7 @@ let speed = 5;
 // Time value
 let time = 0;
 function draw() {
-  background(220);    
+  background(51);    
   if (time >= osu[osu.length-1].time - speed - 1) {
     // If max time exceeded, restart at 0.
     time = 0;
@@ -24,13 +24,15 @@ function draw() {
   // Scan every hitobject & display at right time
   for (let i = 0; i < osu.length; i++) {
     if (osu[i].time >= time && osu[i].time <= (time + delay)) {
-      // Save x,y coordinates
-      let x = osu[i].x;
-      let y = osu[i].y;
-      // Draw every hitobject coordinate as a circle
-      circle(x, y, 4);
-      // Display type
-      text(osu[i].type.type, x, y)
+      let type = osu[i].type.type;
+      if (type === 'circle') {
+        hitObject = new Circle(osu[i].x, osu[i].y, osu[i].time);
+      } else if (type === 'slider') {
+        hitObject = new Slider(osu[i].x, osu[i].y, osu[i].path, osu[i].time);
+      } else {
+        console.log('Unhandled type');
+      }
+      hitObject.render();
     }
   }
 }
