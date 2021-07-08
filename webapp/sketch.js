@@ -1,3 +1,24 @@
+
+
+let osu;
+
+function preload() {
+  let osu_URL = "https://raw.githack.com/sharkAce/osu-to-json/main/compiled/FREEDOM DiVE [FOUR DIMENSIONS].json";
+
+  // http request osu map from gh repo
+  fetch(osu_URL)
+  .then(function (response) {
+    return response.json();
+  })
+  .then(function (data) {
+    osu = data;
+  })
+  .catch(function (error) {
+    console.log("Error: " + error);
+  });
+    // /!\ Will remove http request once moved to local server /!\
+}
+
 function setup() {
   let canvas = createCanvas(511, 383);
   canvas.parent('canvas');
@@ -11,7 +32,7 @@ let speed = 5;
 
 
 // Time value
-let time = 0;
+let time = 1000;
 function draw() {
   background(51);    
   if (time >= osu[osu.length-1].time - speed - 1) {
