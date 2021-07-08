@@ -12,7 +12,7 @@ specify name of file to convert w/o extention
 ```
 npm run compile [file]
 ```
-exemple:
+example:
 ```
 npm run compile "FREEDOM DiVE [FOUR DIMENSIONS]"
 ```
