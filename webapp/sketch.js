@@ -34,12 +34,16 @@ let speed = 5;
 let time = 1500;
 function draw() {
   if (osu === undefined) {
+    // Display text for 'osu' not defined
     background(0);
     push();
     textSize(32);
     textAlign(CENTER);
     fill(255)
     text('osu map not found, please reload page', wnx/2, wny/2);
+    text('try: ', wnx/2 - 160, wny/2 + 50);
+    fill(155,255,100);
+    text('npm run server-up',wnx/2 + 20, wny/2 + 50);
     pop();
   } else {
     scale(2)
