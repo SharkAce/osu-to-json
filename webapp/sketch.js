@@ -3,11 +3,29 @@ function setup() {
   canvas.parent('canvas');
   frameRate(60); 
 }
-function draw() {
-  background(220);
 
+let delay = 1000;
+let time = 0;
+let speed = 5;
+function draw() {
+  background(220);    
+  if (time >= osu[osu.length-1].time - speed - 1) {
+    // If max time exceeded, restart at 0.
+    time = 0;
+  } else {
+    // Increment time value
+    time+=speed;
+  }
+  // Scan every hitobject & display at right time
   for (let i = 0; i < osu.length; i++) {
-    // Draw every hitobject coordinate as a circle
-    circle(osu[i].x, osu[i].y, 4);
+    if (osu[i].time >= time && osu[i].time <= (time + delay)) {
+      // Save x,y coordinates
+      let x = osu[i].x;
+      let y = osu[i].y;
+      // Draw every hitobject coordinate as a circle
+      circle(x, y, 4);
+      // Display type
+      text(osu[i].type.type, x, y)
+    }
   }
 }
