@@ -1,4 +1,4 @@
-// File name, if not specified in cli, 'FREEDOM_DiVE' is default.
+// File name, if not specified in cli, 'FREEDOM DiVE [FOUR DIMENSIONS]' is default.
 let name = process.argv[2] || 'FREEDOM DiVE [FOUR DIMENSIONS]';
 
 // Where to find the .osu file
