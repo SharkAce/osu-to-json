@@ -4,9 +4,14 @@ function setup() {
   frameRate(60); 
 }
 
+// Time before object dissapears
 let delay = 1000;
-let time = 0;
+// Speed at which hitobjects appear
 let speed = 5;
+
+
+// Time value
+let time = 0;
 function draw() {
   background(220);    
   if (time >= osu[osu.length-1].time - speed - 1) {
