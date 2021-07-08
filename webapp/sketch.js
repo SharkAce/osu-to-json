@@ -5,5 +5,9 @@ function setup() {
 }
 function draw() {
   background(220);
-  circle(30, 30, 20);
+
+  for (let i = 0; i < osu.length; i++) {
+    // Draw every hitobject coordinate as a circle
+    circle(osu[i].x, osu[i].y, 4);
+  }
 }
