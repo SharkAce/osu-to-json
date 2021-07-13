@@ -15,7 +15,6 @@ function preload() {
     return response.json();
   })
   .then(function (data) {
-    console.log(data)
     osu = data.HitObjects;
     meta = data.Metadata;
     map_name = meta.Title;
