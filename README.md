@@ -16,3 +16,13 @@ example:
 ```
 npm run compile "FREEDOM_DiVE_[FOUR_DIMENSIONS]"
 ```
+
+### Start the webapp
+run a local server to access the webapp
+```
+npm run server-up
+```
+If the server is not working try:
+```
+npm run server-down
+```
