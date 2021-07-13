@@ -42,9 +42,9 @@ let delay = 500;
 // Speed at which hitobjects appear
 let speed = 5;
 
-
 // Time value
 let time = 1500;
+
 function draw() {
   if (osu === undefined) {
     // Display text for 'osu' not defined
@@ -64,11 +64,12 @@ function draw() {
     scale(2);
 
     push();
-    translate(margin/2, margin/2);
-    stroke(0);
-    noFill();
-    rect(0, 0, playArea_X, playArea_Y);
-    drawHitObjects();
+      // Graphic settings
+      translate(margin/2, margin/2);
+      stroke(0);
+      noFill();
+      // Render
+      drawHitObjects();
     pop();
   }
 }
