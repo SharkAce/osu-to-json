@@ -13,7 +13,7 @@ let file = fs.readFileSync(path, 'utf8');
 
 
 osujson.ParseOSUFileAsync(file).then( (output)=>{
-	let data = JSON.stringify(output.HitObjects);
+	let data = JSON.stringify(output);
 	fs.writeFileSync(compiledPath, data)
 })
 .catch( (err)=>{
