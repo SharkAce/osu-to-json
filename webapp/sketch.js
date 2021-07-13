@@ -1,7 +1,12 @@
 
 
 let osu;
+let meta;
 let map_name;
+let map_version;
+let map_creator;
+let map_artist;
+
 function preload() {
   let osu_URL = "http://127.0.0.1:8080/compiled_songs/FREEDOM_DiVE_[FOUR_DIMENSIONS].json";
   // http request osu map from gh repo
@@ -12,7 +17,11 @@ function preload() {
   .then(function (data) {
     console.log(data)
     osu = data.HitObjects;
-    map_name = data.General.AudioFilename.split('.')[0];
+    meta = data.Metadata;
+    map_name = meta.Title;
+    map_version = meta.Version;  
+    map_creator = meta.Creator;
+    map_artist = meta.Artist;
   })
   .catch(function (error) {
     console.log("Error: " + error);
