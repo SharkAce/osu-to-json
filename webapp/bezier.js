@@ -1,4 +1,4 @@
-function bezierCurve(p0, p1, p2, resolution = 10) {
+function bezierCurve(p0, p1, p2, resolution = 10, size = 1, color = [0,0,0,255]) {
   let p0_x = p0[0];
   let p0_y = p0[1];
   let p1_x = p1[0];
@@ -64,7 +64,8 @@ function bezierCurve(p0, p1, p2, resolution = 10) {
 
   }
   noFill();
-  stroke(0);
+  stroke(color[0],color[1],color[2],color[3]);
+  strokeWeight(size);
   beginShape();
   for (let i = 0; i < points3.length; i++) {
     let x = points3[i][0];
