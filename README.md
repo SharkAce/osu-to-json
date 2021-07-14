@@ -6,7 +6,9 @@ install dependencies
 ```
 npm install
 ```
+
 <br/>
+
 ### Build a .osu file to .json
 specify name of file to convert w/o extention
 ```
