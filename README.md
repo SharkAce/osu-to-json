@@ -21,7 +21,7 @@ npm run compile "FREEDOM_DiVE_[FOUR_DIMENSIONS]"
 <br/>
 
 ### Start the webapp
-run a local server to access the webapp
+Run the local server to access the webapp
 ```
 npm run server-up
 ```
