@@ -22,15 +22,21 @@ function drawHitObjects() {
       let sliderType = osu[i].path.sliderType;
       if (type === 'circle') {
         hitObject = new Circle(osu[i].x, osu[i].y, osu[i].time);
-      } else if (type === 'slider' && sliderType === 'bezier') {
-        hitObject = new Slider(osu[i].x, osu[i].y, osu[i].path, osu[i].time);
-      } else {
-        if (sliderType !== undefined) {
-          console.log('Unhandled type: ' + type + '/' + sliderType+ ' found at index: ' + i);
-        } else {
-          console.log('Unhandled type: ' + type + ' found at index: ' + i);
+      } else if (type === 'slider') {
+        hitObject = new Slider(osu[i].x, osu[i].y, osu[i].path, sliderType);
+        if (sliderType !== 'bezier' && sliderType !== 'linear' && sliderType !== 'perfect') {
+          Handling.error({
+            type: type,
+            sliderType: sliderType,
+            index: i
+          });
         }
-        console.log('Here is the hitObject: ', osu[i]);
+      } else {
+        Handling.error({
+          type: type,
+          sliderType: sliderType,
+          index: i
+        });
       }
       hitObject.render();
     }
