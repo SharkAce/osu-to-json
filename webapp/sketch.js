@@ -6,9 +6,10 @@ let map_name;
 let map_version;
 let map_creator;
 let map_artist;
+let file_name = 'Erehamonika_remixed_by_kors_k_-_Der_Wald_Kors_K_Remix_Rucker_Maze';
 
 function preload() {
-  let osu_URL = "http://127.0.0.1:8080/compiled_songs/FREEDOM_DiVE_[FOUR_DIMENSIONS].json";
+  let osu_URL = "http://127.0.0.1:8080/compiled_songs/"+file_name+".json";
   // http request osu map from gh repo
   fetch(osu_URL)
   .then(function (response) {
@@ -38,7 +39,7 @@ function setup() {
 }
 
 // Time before object dissapears
-let delay = 500;
+let delay = 1000;
 // Speed at which hitobjects appear
 let speed = 5;
 
