@@ -8,12 +8,12 @@
 function drawHitObjects() {
   //Play area
   rect(0, 0, playArea_X, playArea_Y);
-  if (time >= osu[osu.length-1].time - speed - 1) {
+  if (time >= osu[osu.length - 1].time - speed - 1) {
     // If max time exceeded, restart at 0.
     time = 0;
   } else {
     // Increment time value
-    time+=speed;
+    time += speed;
   }
   // Scan every hitobject & display at right time
   for (let i = 0; i < osu.length; i++) {
